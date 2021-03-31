@@ -185,41 +185,41 @@ LIBEVENT_OPENSSL
 LIBEVENT_MBEDTLS
 
 dnl Checks for header files.
-AC_CHECK_HEADERS([ \
-  arpa/inet.h \
-  fcntl.h \
-  ifaddrs.h \
-  mach/mach_time.h \
-  mach/mach.h \
-  netdb.h \
-  netinet/in.h \
-  netinet/in6.h \
-  netinet/tcp.h \
-  sys/un.h \
-  poll.h \
-  port.h \
-  stdarg.h \
-  stddef.h \
-  sys/devpoll.h \
-  sys/epoll.h \
-  sys/event.h \
-  sys/eventfd.h \
-  sys/ioctl.h \
-  sys/mman.h \
-  sys/param.h \
-  sys/queue.h \
-  sys/resource.h \
-  sys/select.h \
-  sys/sendfile.h \
-  sys/socket.h \
-  sys/stat.h \
-  sys/time.h \
-  sys/timerfd.h \
-  sys/uio.h \
-  sys/wait.h \
-  sys/random.h \
-  errno.h \
-  afunix.h \
+AC_CHECK_HEADERS([
+  arpa/inet.h
+  fcntl.h
+  ifaddrs.h
+  mach/mach_time.h
+  mach/mach.h
+  netdb.h
+  netinet/in.h
+  netinet/in6.h
+  netinet/tcp.h
+  sys/un.h
+  poll.h
+  port.h
+  stdarg.h
+  stddef.h
+  sys/devpoll.h
+  sys/epoll.h
+  sys/event.h
+  sys/eventfd.h
+  sys/ioctl.h
+  sys/mman.h
+  sys/param.h
+  sys/queue.h
+  sys/resource.h
+  sys/select.h
+  sys/sendfile.h
+  sys/socket.h
+  sys/stat.h
+  sys/time.h
+  sys/timerfd.h
+  sys/uio.h
+  sys/wait.h
+  sys/random.h
+  errno.h
+  afunix.h
 ])
 
 case "${host_os}" in
@@ -316,7 +316,7 @@ AM_CONDITIONAL(BUILD_MIDIPIX, test x$midipix = xtrue)
 AM_CONDITIONAL(BUILD_WITH_NO_UNDEFINED, test x$bwin32 = xtrue || test x$cygwin = xtrue || test x$midipix = xtrue)
 
 if test x$bwin32 = xtrue; then
-  AC_HAVE_LIBRARY([ws2_32])
+  AC_CHECK_LIB([ws2_32], [main])
 fi
 
 dnl Checks for typedefs, structures, and compiler characteristics.
@@ -325,43 +325,41 @@ AC_C_INLINE
 AC_HEADER_TIME
 
 dnl Checks for library functions.
-AC_CHECK_FUNCS([ \
-  accept4 \
-  arc4random \
-  arc4random_buf \
-  arc4random_addrandom \
-  eventfd \
-  epoll_create1 \
-  fcntl \
-  getegid \
-  geteuid \
-  getifaddrs \
-  gettimeofday \
-  issetugid \
-  mach_absolute_time \
-  mmap \
-  nanosleep \
-  pipe \
-  pipe2 \
-  putenv \
-  sendfile \
-  setenv \
-  setrlimit \
-  sigaction \
-  signal \
-  strsignal \
-  splice \
-  strlcpy \
-  strsep \
-  strtok_r \
-  strtoll \
-  sysctl \
-  timerfd_create \
-  umask \
-  unsetenv \
-  usleep \
-  vasprintf \
-  getrandom \
+AC_CHECK_FUNCS([
+  accept4
+  arc4random
+  arc4random_buf
+  arc4random_addrandom
+  eventfd
+  epoll_create1
+  fcntl
+  getegid
+  geteuid
+  getifaddrs
+  gettimeofday
+  issetugid
+  mach_absolute_time
+  mmap
+  nanosleep
+  pipe
+  pipe2
+  putenv
+  sendfile
+  setenv
+  setrlimit
+  sigaction
+  signal
+  strsignal
+  strlcpy
+  strsep
+  strtok_r
+  strtoll
+  sysctl
+  timerfd_create
+  umask
+  unsetenv
+  usleep
+  getrandom
 ])
 
 AS_IF([test x$bwin32 = xtrue],

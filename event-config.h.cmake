@@ -271,9 +271,6 @@
 /* Define to 1 if you have the `strsignal' function. */
 #cmakedefine EVENT__HAVE_STRSIGNAL 1
 
-/* Define to 1 if you have the `splice' function. */
-#cmakedefine EVENT__HAVE_SPLICE 1
-
 /* Define to 1 if you have the <stdarg.h> header file. */
 #cmakedefine EVENT__HAVE_STDARG_H 1
 
@@ -448,9 +445,6 @@
 
 /* Define to 1 if you have the `unsetenv' function. */
 #cmakedefine EVENT__HAVE_UNSETENV 1
-
-/* Define to 1 if you have the `vasprintf' function. */
-#cmakedefine EVENT__HAVE_VASPRINTF 1
 
 /* Define if kqueue works correctly with pipes */
 #cmakedefine EVENT__HAVE_WORKING_KQUEUE 1
